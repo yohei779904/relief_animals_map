@@ -1,0 +1,13 @@
+<!--下記で「/application.html.erb」の<%= yield :cover %>に埋め込まれる-->
+<% content_for :cover do %>
+  <div class="cover">
+    <div class="cover-inner">
+      <div class="cover-contents">
+        <%= image_tag '/images/cover_main.png', alt: "Background_Photo", class: "background_photo" %>
+
+          <%= link_to '支援者 新規登録', supporter_signup_path, class: 'btn_supporter btn-default' %>
+          <%= link_to '救援者 新規登録', rescuestation_signup_path, class: 'btn_rescuer btn-default' %>
+      </div>
+    </div>
+  </div>
+<% end %>

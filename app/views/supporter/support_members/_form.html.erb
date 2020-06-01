@@ -1,0 +1,27 @@
+<%= form_with(model: @SupportMember, local: true) do |f| %>
+
+  <div>
+    <%= f.text_field :lastname, :placeholder => '氏名', class: 'required',required: true %>
+  </div>
+  <div>
+    <%= f.text_field :firstname, :placeholder => '名前', class: 'required',required: true %>
+  </div>
+  <div>
+    <%= f.text_field :lastname_kana, :placeholder => '氏名カナ', class: 'required',required: true %>
+  </div>
+  <div>
+    <%= f.text_field :firstname_kana, :placeholder => '名前カナ', class: 'required',required: true %>
+  </div>
+  <div>
+    <%= f.email_field :email, :placeholder => 'Email', class: 'required', size: 32, required: true %>
+  </div>
+  <div>
+    <%= f.password_field :password, :placeholder => 'Password', class: 'required', required: true %>
+  </div>
+  <div>
+    <%= f.password_field :password_confirmation, :placeholder => 'Password（Confirmation）', class: 'required', required: true %>
+  </div>
+  <div class = 'buttons'>
+    <%= f.submit 'Push' %>
+  </div>
+<% end %>

@@ -1,0 +1,39 @@
+<%= form_with(model: @RescuerMember, local: true) do |f| %>
+
+  <div>
+    <%= f.text_field :rescue_station_name, :placeholder => '救援施設名', class: 'required',required: true %>
+  </div>
+  <div>
+    <%= f.text_field :rescue_station_name_kana, :placeholder => '救援施設名 カナ', class: 'required',required: true %>
+  </div>
+  <div>
+    <%= f.text_field :representative, :placeholder => '代表者', class: 'required',required: true %>
+  </div>
+  <div>
+    <%= f.text_field :representative_lastname_kana, :placeholder => '代表者 姓カナ', class: 'required',required: true %>
+  </div>
+  <div>
+    <%= f.text_field :representative_firstname_kana, :placeholder => '代表者 名カナ', class: 'required',required: true %>
+  </div>
+  <div>
+    <%= f.email_field :email, :placeholder => 'Email', class: 'required', size: 32, required: true %>
+  </div>
+  <div>
+    <%= f.text_field :post_code, :placeholder => '郵便番号', class: 'required',required: true %>
+  </div>
+  <div>
+    <%= f.text_field :home_address, :placeholder => '住所', class: 'required',required: true %>
+  </div>
+  <div>
+    <%= f.telephone_field :phone_number, :placeholder => '電話番号', class: 'required',required: true %>
+  </div>
+  <div>
+    <%= f.password_field :password, :placeholder => 'Password', class: 'required', required: true %>
+  </div>
+  <div>
+    <%= f.password_field :password_confirmation, :placeholder => 'Password（Confirmation）', class: 'required', required: true %>
+  </div>
+  <div class = 'buttons'>
+    <%= f.submit 'Push' %>
+  </div>
+<% end %>

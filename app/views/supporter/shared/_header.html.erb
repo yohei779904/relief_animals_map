@@ -1,0 +1,43 @@
+<header>
+  <%= link_to image_tag('/images/logo.png', alt: 'Logo'), root_path, class: "logo-mark" %>
+  <%= content_tag(:span, flash.notice, class: 'notice') if flash.notice %>
+  <%= content_tag(:span, flash.alert, class: 'alert') if flash.alert %>
+
+  <div class = 'navi'>
+    <% if sp_logged_in? %>
+      <ul>
+        <li>
+          <%= link_to '救援者の確認', rescuestation_rescuer_members_path %>
+        </li>
+        <div class="section s_01">
+          <div class="accordion_one">
+            <div class="accordion_header">
+            マイページ
+            </div>
+            <div class="accordion_inner">
+              <div class="box_one">
+                <p class="txt_a_ac">
+                  <%= link_to '登録情報', '#' %>
+                </p>
+                <p class="txt_a_ac">
+                  <%= link_to 'ログアウト', supporter_logout_path, method: :delete %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ul>
+    <% else %>
+      <div class='normal'>
+        <ul>
+          <li>
+            <%= link_to '支援者ログイン', supporter_login_path %>
+          </li>
+          <li>
+            <%= link_to '救援者ログイン', rescuestation_login_path %>
+          </li>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+</header>
