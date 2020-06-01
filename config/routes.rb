@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :rescuer_members
+    resources :support_members
+
+    root to: "rescuer_members#index"
+  end
+
   root to: 'toppages#index'
 
   namespace :supporter do

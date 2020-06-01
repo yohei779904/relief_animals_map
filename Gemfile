@@ -31,6 +31,14 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'rails-i18n'
+gem 'administrate'
+gem 'administrate_collapsible_navigation'
+gem 'i18n_generators'
+gem 'kaminari'
+gem 'date_validator'
+gem 'valid_email2'
+gem 'nokogiri'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

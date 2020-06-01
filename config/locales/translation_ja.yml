@@ -1,0 +1,34 @@
+ja:
+  activerecord:
+    models:
+      rescuer_member: 救援者  #g
+      support_member: 支援者  #g
+
+    attributes:
+      rescuer_member:
+        comment: コメント  #g
+        email: Eメール  #g
+        end_date: 終了日  #g
+        home_address: 住所  #g
+        homepage: ホームページ  #g
+        password_digest: パスワード  #g
+        phone_number: 電話番号  #g
+        post_code: 郵便番号  #g
+        representative: 代表者  #g
+        representative_firstname_kana: 代表者 名カナ  #g
+        representative_lastname_kana: 代表者 姓カナ  #g
+        rescue_station_name: 救援施設名  #g
+        rescue_station_name_kana: 救援施設 カナ  #g
+        start_date: 開始日  #g
+        suspended: 一時停止  #g
+
+      support_member:
+        email: Eメール  #g
+        end_date: 終了日  #g
+        firstname: 名  #g
+        firstname_kana: 名カナ  #g
+        lastname: 姓  #g
+        lastname_kana: 姓カナ  #g
+        password_digest: パスワード  #g
+        start_date: 開始日  #g
+        suspended: 一時停止  #g

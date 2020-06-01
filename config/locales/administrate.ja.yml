@@ -1,0 +1,5 @@
+ja:
+  administrate:
+    search:
+      clear: 検索をクリアする
+      label: 検索 %{resource}
