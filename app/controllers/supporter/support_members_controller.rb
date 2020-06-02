@@ -1,4 +1,6 @@
 class Supporter::SupportMembersController < Supporter::Base
+  before_action :authorize
+
   def show
     @support_member = SupportMember.find(params[:id])
   end

@@ -28,7 +28,7 @@ Rails.application.routes.draw do
     resources :rescuer_members, except: [:destroy]
   end
 
-  resources :items, only: [:show, :new]
+  resources :items, only: [:new]
   resources :ownerships, only: [:create, :destroy]
 end
 

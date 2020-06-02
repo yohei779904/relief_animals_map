@@ -39,6 +39,8 @@ gem 'kaminari'
 gem 'date_validator'
 gem 'valid_email2'
 gem 'nokogiri'
+gem 'rakuten_web_service' , '1.5.0'
+gem 'dotenv-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
