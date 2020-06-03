@@ -1,4 +1,6 @@
 class Rescuestation::SessionsController < Rescuestation::Base
+   # このコントローラーでは、『unless current_rescuer_member』が実行されないようにする。
+   skip_before_action :authorize
   def new
   end
 

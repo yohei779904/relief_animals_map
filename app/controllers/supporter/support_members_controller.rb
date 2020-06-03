@@ -1,5 +1,5 @@
 class Supporter::SupportMembersController < Supporter::Base
-  before_action :authorize
+  before_action :authorize, except:[:new, :create]
 
   def show
     @support_member = SupportMember.find(params[:id])

@@ -2,9 +2,9 @@ module ApplicationHelper
 
   def document_title
     if @title.present?
-      '#{@title} - Baukis2'
+      '#@title - Relief_animals_map'
     else
-      'Baukis2'
+      'Relief_animals_map'
     end
   end
 end

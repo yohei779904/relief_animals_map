@@ -1,4 +1,5 @@
 class Rescuestation::RescuerMembersController < Rescuestation::Base
+  before_action :authorize, except:[:new, :create, :index]
 
   def index
     @rescuer_members = RescuerMember.all

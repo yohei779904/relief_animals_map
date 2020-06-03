@@ -1,4 +1,6 @@
 class Supporter::SessionsController < Supporter::Base
+   # このコントローラーでは、『unless current_support_member』が実行されないようにする。
+   skip_before_action :authorize
   def new
   end
 
@@ -6,6 +8,7 @@ class Supporter::SessionsController < Supporter::Base
     email = params[:session][:email].downcase
     password = params[:session][:password]
     if login(email, password)
+      session[:last_access_time] = Time.current
       flash.notice = 'ログインしました。'
       redirect_to supporter_support_member_path(current_support_member)
     else
