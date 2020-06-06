@@ -1,16 +1,10 @@
 <%= form_with(model: @SupportMember, local: true) do |f| %>
 
   <div>
-    <%= f.text_field :lastname, :placeholder => '氏名', class: 'required',required: true %>
+    <%= f.text_field :name, :placeholder => '氏名', class: 'required',required: true %>
   </div>
   <div>
-    <%= f.text_field :firstname, :placeholder => '名前', class: 'required',required: true %>
-  </div>
-  <div>
-    <%= f.text_field :lastname_kana, :placeholder => '氏名カナ', class: 'required',required: true %>
-  </div>
-  <div>
-    <%= f.text_field :firstname_kana, :placeholder => '名前カナ', class: 'required',required: true %>
+    <%= f.text_field :name_kana, :placeholder => '氏名 カナ', class: 'required',required: true %>
   </div>
   <div>
     <%= f.email_field :email, :placeholder => 'Email', class: 'required', size: 32, required: true %>

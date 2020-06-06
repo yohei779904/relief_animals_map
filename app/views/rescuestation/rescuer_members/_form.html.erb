@@ -1,19 +1,16 @@
 <%= form_with(model: @RescuerMember, local: true) do |f| %>
 
   <div>
-    <%= f.text_field :rescue_station_name, :placeholder => '救援施設名', class: 'required',required: true %>
+    <%= f.text_field :rescue_station, :placeholder => '救援施設名', class: 'required',required: true %>
   </div>
   <div>
-    <%= f.text_field :rescue_station_name_kana, :placeholder => '救援施設名 カナ', class: 'required',required: true %>
+    <%= f.text_field :rescue_station_kana, :placeholder => '救援施設名 カナ', class: 'required',required: true %>
   </div>
   <div>
-    <%= f.text_field :representative, :placeholder => '代表者', class: 'required',required: true %>
+    <%= f.text_field :representative, :placeholder => '代表者名', class: 'required',required: true %>
   </div>
   <div>
-    <%= f.text_field :representative_lastname_kana, :placeholder => '代表者 姓カナ', class: 'required',required: true %>
-  </div>
-  <div>
-    <%= f.text_field :representative_firstname_kana, :placeholder => '代表者 名カナ', class: 'required',required: true %>
+    <%= f.text_field :representative_kana, :placeholder => '代表者名 カナ', class: 'required',required: true %>
   </div>
   <div>
     <%= f.email_field :email, :placeholder => 'Email', class: 'required', size: 32, required: true %>

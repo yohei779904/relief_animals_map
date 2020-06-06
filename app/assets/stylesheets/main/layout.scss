@@ -13,15 +13,19 @@
  *= require_tree .
  *= require_self
  */
- 
+
  
  @charset "utf-8";
  $moderate: 6px;
  $wide: 10px;
  $standard_line_height: 16px;
 
+ @media screen and (max-width: 640px) {
+   text-align: center;
+}
 
-  /* body */
+
+ /* body */
 
  html, body {
   margin: 0;
@@ -39,7 +43,7 @@
  }
 
 
-  /* header */
+ /* header */
 
  header {
   background-color: #fff;

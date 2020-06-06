@@ -19,4 +19,11 @@ module SessionsHelper
   def rs_logged_in?
     !!current_rescuer_member
   end
+
+  def two_permits
+    unless  current_support_member || current_rescuer_member
+      flash.alert = '支援者または救援者としてログインしてください。'
+      redirect_to root_url
+    end
+  end
 end

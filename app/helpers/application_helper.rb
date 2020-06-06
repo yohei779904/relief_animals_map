@@ -1,11 +1,9 @@
 module ApplicationHelper
 
-  def document_title
-    if @title.present?
-      '#@title - Relief_animals_map'
-    else
-      'Relief_animals_map'
-    end
+  def page_title
+    title = 'Relief Animals Map'
+    title = @page_title + " | " + title if @page_title
+    title
   end
 end
 

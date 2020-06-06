@@ -5,7 +5,7 @@ $color-white: #FFF;
 $wide: 10px;
 
 div.container {
-  div#signup-edit-generic-form {
+  div#signup-generic-form {
     font-family: 'Montserrat', sans-serif;
     letter-spacing: -0.5px;
     font-size: $ruler;
@@ -16,7 +16,7 @@ div.container {
     border: solid 4px $color-white;
     background-color: $color-bg;
 
-    .signup-edit {
+    .signup {
       font-family: 'arial black', sans-serif;
       color: $color-shadow;
       text-align: center;

@@ -22,18 +22,35 @@
             </div>
           </div>
         </div>
-    
-    <% else %>
-      <div class='normal'>
-        <ul>
-          <li>
-            <%= link_to '支援者ログイン', supporter_login_path %>
-          </li>
-          <li>
-            <%= link_to '救援者ログイン', rescuestation_login_path %>
-          </li>
-        </ul>
-      </div>
-    <% end %>
+      <% elsif sp_logged_in? %>
+        <div class="section s_01">
+          <div class="accordion_one">
+            <div class="accordion_header">
+            マイページ
+            </div>
+            <div class="accordion_inner">
+              <div class="box_one">
+                <p class="txt_a_ac">
+                  <%= link_to '登録情報', '#' %>
+                </p>
+                <p class="txt_a_ac">
+                  <%= link_to 'ログアウト', supporter_logout_path, method: :delete %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% else %>
+        <div class='normal'>
+          <ul>
+            <li>
+              <%= link_to '支援者ログイン', supporter_login_path %>
+            </li>
+            <li>
+              <%= link_to '救援者ログイン', rescuestation_login_path %>
+            </li>
+          </ul>
+        </div>
+      <% end %>
   </div>
 </header>

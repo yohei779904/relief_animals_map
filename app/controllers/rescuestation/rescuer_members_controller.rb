@@ -1,5 +1,6 @@
 class Rescuestation::RescuerMembersController < Rescuestation::Base
   before_action :authorize, except:[:new, :create, :index]
+  before_action :two_permits, only:[:index]
 
   def index
     @rescuer_members = RescuerMember.all
@@ -32,11 +33,11 @@ class Rescuestation::RescuerMembersController < Rescuestation::Base
   def update
     @rescuer_member = RescuerMember.find(params[:id])
     
-    if @rescuer_member.update_attributes(rescuer_member_params)
-      flash[:success] = '登録情報を編集しました。'
+    if @rescuer_member.update_attributes(edit_rescuer_member_params)
+      flash.notice = '救援者情報を編集しました。'
       redirect_to :rescuestation_rescuer_member
     else
-      flash.now[:danger] = '登録情報の編集に失敗しました。'
+      flash.now.alert = '登録情報の編集に失敗しました。'
       render :edit
     end
   end
@@ -46,9 +47,17 @@ class Rescuestation::RescuerMembersController < Rescuestation::Base
 
   def rescuer_member_params
     params.permit(
-      :url, :rescue_station_name, :rescue_station_name_kana, :representative,
-      :representative_lastname_kana, :representative_firstname_kana, :email,
-      :phone_number, :post_code, :home_address, :password, :password_confirmation
+      :url, :rescue_station, :rescue_station_kana, :representative,
+      :representative_kana, :email, :phone_number,
+      :post_code, :home_address, :password, :password_confirmation
+    )
+  end
+
+  def edit_rescuer_member_params
+    params.permit(
+      :url, :rescue_station, :rescue_station_kana, :representative,
+      :representative_kana, :email, :phone_number,
+      :post_code, :home_address, :homepage, :comment
     )
   end
 end

@@ -4,18 +4,15 @@ class RescuerMemberDashboard < Administrate::BaseDashboard
 
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    rescue_station_name: Field::String,
-    rescue_station_name_kana: Field::String,
+    rescue_station: Field::String,
+    rescue_station_kana: Field::String,
     representative: Field::String,
-    representative_lastname_kana: Field::String,
-    representative_firstname_kana: Field::String,
+    representative_kana: Field::String,
     email: Field::String,
     phone_number: Field::String,
     post_code: Field::String,
     home_address: Field::String,
     password_digest: Field::String,
-    start_date: Field::Date,
-    end_date: Field::Date,
     homepage: Field::String,
     comment: Field::Text,
     suspended: Field::Boolean,
@@ -24,61 +21,52 @@ class RescuerMemberDashboard < Administrate::BaseDashboard
   }.freeze
 
   COLLECTION_ATTRIBUTES = %i[
-  id
-  rescue_station_name
-  rescue_station_name_kana
-  representative
-  representative_lastname_kana
-  representative_firstname_kana
-  email
-  phone_number
-  post_code
-  home_address
-  password_digest
-  start_date
-  end_date
-  homepage
-  comment
-  suspended
+    id
+    rescue_station
+    rescue_station_kana
+    representative
+    representative_kana
+    email
+    phone_number
+    post_code
+    home_address
+    password_digest
+    homepage
+    comment
+    suspended
   ].freeze
 
   SHOW_PAGE_ATTRIBUTES = %i[
-  id
-  rescue_station_name
-  rescue_station_name_kana
-  representative
-  representative_lastname_kana
-  representative_firstname_kana
-  email
-  phone_number
-  post_code
-  home_address
-  password_digest
-  start_date
-  end_date
-  homepage
-  comment
-  suspended
-  created_at
-  updated_at
+    id
+    rescue_station
+    rescue_station_kana
+    representative
+    representative_kana
+    email
+    phone_number
+    post_code
+    home_address
+    password_digest
+    homepage
+    comment
+    suspended
+    created_at
+    updated_at
   ].freeze
 
   FORM_ATTRIBUTES = %i[
-  rescue_station_name
-  rescue_station_name_kana
-  representative
-  representative_lastname_kana
-  representative_firstname_kana
-  email
-  phone_number
-  post_code
-  home_address
-  password_digest
-  start_date
-  end_date
-  homepage
-  comment
-  suspended
+    rescue_station
+    rescue_station_kana
+    representative
+    representative_kana
+    email
+    phone_number
+    post_code
+    home_address
+    password_digest
+    homepage
+    comment
+    suspended
   ].freeze
 
   # COLLECTION_FILTERS

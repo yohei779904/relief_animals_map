@@ -25,8 +25,8 @@ class Supporter::SupportMembersController < Supporter::Base
 
   def support_member_params
     params.permit(
-      :url, :lastname, :firstname, :lastname_kana,
-      :firstname_kana, :email, :password, :password_confirmation
+      :url, :name, :name_kana,
+      :email, :password, :password_confirmation
     )
   end
 end

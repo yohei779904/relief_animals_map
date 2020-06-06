@@ -4,57 +4,41 @@ class SupportMemberDashboard < Administrate::BaseDashboard
 
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    lastname: Field::String,
-    firstname: Field::String,
-    lastname_kana: Field::String,
-    firstname_kana: Field::String,
+    name: Field::String,
+    name_kana: Field::String,
     email: Field::String,
     password_digest: Field::String,
-    start_date: Field::Date,
-    end_date: Field::Date,
     suspended: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
 
   COLLECTION_ATTRIBUTES = %i[
-  id
-  lastname
-  firstname
-  lastname_kana
-  firstname_kana
-  email
-  password_digest
-  start_date
-  end_date
-  suspended
+    id
+    name
+    name_kana
+    email
+    password_digest
+    suspended
   ].freeze
 
   SHOW_PAGE_ATTRIBUTES = %i[
-  id
-  lastname
-  firstname
-  lastname_kana
-  firstname_kana
-  email
-  password_digest
-  start_date
-  end_date
-  suspended
-  created_at
-  updated_at
+    id
+    name
+    name_kana
+    email
+    password_digest
+    suspended
+    created_at
+    updated_at
   ].freeze
 
   FORM_ATTRIBUTES = %i[
-  lastname
-  firstname
-  lastname_kana
-  firstname_kana
-  email
-  password_digest
-  start_date
-  end_date
-  suspended
+    name
+    name_kana
+    email
+    password_digest
+    suspended
   ].freeze
 
   # COLLECTION_FILTERS

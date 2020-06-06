@@ -1,2 +1,46 @@
-<h1>Rescuestation::RescuerMembers#show</h1>
-<p>Find me in app/views/rescuestation/rescuer_members/show.html.erb</p>
+<table>
+  <td colspan = '2' class = 'table_top'>救援者 情報</td>
+  <tr>
+    <th>救援施設名</th>
+    <td><%= @rescuer_member.rescue_station %></td>
+  </tr>
+  <tr>
+    <th>救援施設名 カナ</th>
+    <td><%= @rescuer_member.rescue_station_kana %></td>
+  </tr>
+  <tr>
+    <th>代表者名</th>
+    <td><%= @rescuer_member.representative %></td>
+  </tr>
+  <tr>
+    <th>代表者名 カナ</th>
+    <td><%= @rescuer_member.representative_kana %></td>
+  </tr>
+  <tr>
+    <th>Email</th>
+    <td><%= @rescuer_member.email %></td>
+  </tr>
+  <tr>
+    <th>郵便番号</th>
+    <td><%= @rescuer_member.post_code %></td>
+  </tr>
+  <tr>
+    <th>住所</th>
+    <td><%= @rescuer_member.home_address %></td>
+  </tr>
+  <tr>
+    <th>電話番号</th>
+    <td><%= @rescuer_member.phone_number %></td>
+  </tr>
+  <tr>
+    <th>ホームページ</th>
+    <td><%= @rescuer_member.homepage %></td>
+  </tr>
+  <tr class = 'comment'>
+    <th class = 'comment'>コメント</th>
+    <td><%= @rescuer_member.comment %></td>
+  </tr>
+  <td colspan = '2' class = 'table_down'>
+    <%= link_to '編集', edit_rescuestation_rescuer_member_path(current_rescuer_member), class: 'button' %>
+  </td>
+</table>
