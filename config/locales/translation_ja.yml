@@ -8,7 +8,6 @@ ja:
       rescuer_member:
         comment: コメント  #g
         email: Eメール  #g
-        end_date: 終了日  #g
         home_address: 住所  #g
         homepage: ホームページ  #g
         password_digest: パスワード  #g
@@ -24,11 +23,9 @@ ja:
 
       support_member:
         email: Eメール  #g
-        end_date: 終了日  #g
         firstname: 名  #g
         firstname_kana: 名カナ  #g
         lastname: 姓  #g
         lastname_kana: 姓カナ  #g
         password_digest: パスワード  #g
-        start_date: 開始日  #g
         suspended: 一時停止  #g

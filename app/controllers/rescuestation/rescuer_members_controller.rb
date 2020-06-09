@@ -3,7 +3,7 @@ class Rescuestation::RescuerMembersController < Rescuestation::Base
   before_action :two_permits, only:[:index]
 
   def index
-    @rescuer_members = RescuerMember.all
+    @rescuer_members = RescuerMember.all.page(params[:page]).per(6)
   end
 
   def show
@@ -57,7 +57,7 @@ class Rescuestation::RescuerMembersController < Rescuestation::Base
     params.permit(
       :url, :rescue_station, :rescue_station_kana, :representative,
       :representative_kana, :email, :phone_number,
-      :post_code, :home_address, :homepage, :comment
+      :post_code, :home_address, :comment
     )
   end
 end

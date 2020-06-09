@@ -13,8 +13,6 @@ class RescuerMemberDashboard < Administrate::BaseDashboard
     post_code: Field::String,
     home_address: Field::String,
     password_digest: Field::String,
-    homepage: Field::String,
-    comment: Field::Text,
     suspended: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -31,8 +29,6 @@ class RescuerMemberDashboard < Administrate::BaseDashboard
     post_code
     home_address
     password_digest
-    homepage
-    comment
     suspended
   ].freeze
 
@@ -47,8 +43,6 @@ class RescuerMemberDashboard < Administrate::BaseDashboard
     post_code
     home_address
     password_digest
-    homepage
-    comment
     suspended
     created_at
     updated_at
@@ -64,8 +58,6 @@ class RescuerMemberDashboard < Administrate::BaseDashboard
     post_code
     home_address
     password_digest
-    homepage
-    comment
     suspended
   ].freeze
 

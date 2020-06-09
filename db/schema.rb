@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 20200601112726) do
     t.string "post_code", null: false
     t.string "home_address", null: false
     t.string "password_digest", null: false
-    t.string "homepage"
     t.text "comment"
     t.boolean "suspended", default: false, null: false
     t.datetime "created_at", null: false

@@ -11,7 +11,6 @@ class CreateRescuerMembers < ActiveRecord::Migration[5.1]
       t.string :post_code, null: false
       t.string :home_address, null: false
       t.string :password_digest, null: false
-      t.string :homepage
       t.text :comment
       t.boolean :suspended, default: false, null: false
 

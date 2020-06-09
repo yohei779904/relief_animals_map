@@ -1,11 +1,20 @@
-<% provide(:title, "Edit") %>
-
-<div id = 'signup-edit-generic-form'>
-  <div class = 'signup-edit'>
-    <% @title = 'Edit menu' %>
-    <h1><%= @title %></h1>
-  </div>
-  
-    <%= render 'form' %>
-  
-</div>
+<%= form_with(model: @SupportMember, method: :patch, local: true) do |f| %></td>
+  <table>
+    <td colspan = '2' class = 'table_top'>支援者 情報</td>
+    <tr>
+      <th>支援者名</th>
+      <td><%= f.text_field :name, value: @support_member.name, size: 40, class: 'flame' %></td>
+    </tr>
+    <tr>
+      <th>支援者名 カナ</th>
+      <td><%= f.text_field :name_kana, value: @support_member.name_kana, size: 40, class: 'flame'  %></td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td><%= f.text_field :email, value: @support_member.email, size: 40, class: 'flame'  %></td>
+    </tr>
+    <td colspan = '2' class = 'table_down'>
+      <%= f.submit '更新', class: 'button'  %>
+    </td>
+  </table>
+<% end %>

@@ -1,6 +1,6 @@
-<table>
-  <td colspan = '2' class = 'table_top'>救援者 情報</td>
-  <%= form_with(model: @RescuerMember, method: :patch, local: true) do |f| %></td>
+<%= form_with(model: @RescuerMember, method: :patch, local: true) do |f| %></td>
+  <table>
+    <td colspan = '2' class = 'table_top'>救援者 情報</td>
     <tr>
       <th>救援施設名</th>
       <td><%= f.text_field :rescue_station, value: @rescuer_member.rescue_station, size: 40 %></td>
@@ -33,10 +33,6 @@
       <th>電話番号</th>
       <td><%= f.telephone_field :phone_number, value: @rescuer_member.phone_number, size: 40 %></td>
     </tr>
-    <tr>
-      <th>ホームページ</th>
-      <td><%= f.text_field :homepage, value: @rescuer_member.homepage, size: 40 %></td>
-    </tr>
     <tr class = 'comment'>
       <th class = 'comment'>コメント</th>
       <td><%= f.text_area :comment, value: @rescuer_member.comment, size: '42x3' %></td>
@@ -44,5 +40,5 @@
     <td colspan = '2' class = 'table_down'>
       <%= f.submit '更新', class: 'button'  %>
     </td>
-  <% end %>
-</table>
+  </table>
+<% end %>

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
     get 'signup', to: 'support_members#new'
     post 'signup', to: 'support_members#create'
+    patch 'support_members/:id/edit/', to: 'support_members#update'
     resources :support_members, except: [:destroy]
   end
 
@@ -25,7 +26,7 @@ Rails.application.routes.draw do
 
     get 'signup', to: 'rescuer_members#new'
     post 'signup', to: 'rescuer_members#create'
-    patch "/rescuer_members/:id/edit/" => "rescuer_members#update"
+    patch 'rescuer_members/:id/edit/', to: 'rescuer_members#update'
     resources :rescuer_members, except: [:destroy]
   end
 

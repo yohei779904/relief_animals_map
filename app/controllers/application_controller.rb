@@ -14,6 +14,5 @@ class ApplicationController < ActionController::Base
       'supporter'
     end
   end
-
 end
 

@@ -1,0 +1,30 @@
+.paginate_position {
+  text-align: center;
+  margin: 6px 0;
+  text-align: center;
+  
+  span.page, span.first, span.prev, span.next,span.last {
+    display: inline-block;
+    background-color: #bffce4;
+    padding: 2px 8px;
+    border-radius: 15px;
+    font-size: 14px;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  span.current {
+    background-color: #008b6d;
+    color: #fff;
+  }
+  
+  span.disabled {
+    color: #6e6e6e;
+  }
+  
+  span.gap {
+    background-color: transparent;
+  }
+}

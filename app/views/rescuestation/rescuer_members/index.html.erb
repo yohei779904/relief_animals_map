@@ -1,21 +1,57 @@
-<div class="row">
+<div class = 'row'>
   <% @rescuer_members.each do|rescuer_member| %>
-    <div class="col-md-4">
-      <div id  = 'card'>
-        <%= image_tag '/images/Sample.image.jpg', alt: 'Sample_image' %>
-
-        <div class = 'card_content'>
-          <div class = 'card_title'>
-            <%= rescuer_member.rescue_station %>
-          </div>
-          <div class = 'description'>
-            <%= rescuer_member.comment %>
-          </div>
-          <div class = 'card_button'>
-            詳細
+    <div class = 'col-xs-8 col-md-4'>
+      <div class = 'card'>
+        <div class = 'wrapper'>
+          <div class = 'data'>
+            <div class = 'content'>
+              <div class = 'rescue_station_kana'>
+                <%= rescuer_member.rescue_station_kana %>
+              </div>
+              <div class = 'rescue_station'>
+                <%= rescuer_member.rescue_station %>
+              </div>
+              <div class = 'representative'>
+                <span class="material-icons emoji_people">emoji_people</span>
+                代表者：<%= rescuer_member.representative %>（<%= rescuer_member.representative_kana %>）
+              </div>
+              <div class = 'post_code'>
+                 <span class = 'post_icon'>〒 </span>
+                 <%= rescuer_member.post_code %>
+              </div>
+              <div class = 'home_address'>
+              <span class = 'material-icons house'>house</span>
+                <%= rescuer_member.home_address %>
+              </div>
+              <div class = 'phone_number'>
+                <span class = 'material-icons phone_in_talk'>phone_in_talk</span>
+                <%= rescuer_member.phone_number %>
+              </div>
+              <div class = 'email'>
+                <span class = 'material-icons mail_outline'>mail_outline</span>
+                <%= rescuer_member.email %>
+              </div>
+              <div class = 'comment'>
+                <p class = 'help'>< ご支援をお願い致します。></p>
+                <% if rescuer_member.comment.present? %>
+                  <%= rescuer_member.comment %>
+                <% else %>
+                  <p class = 'help'>
+                    小さい子から大人の子まで多くの犬猫を保護しています。
+                    毎日のフード、シーツ等に大変お金がかかります。
+                    ご支援をしていただけないでしょうか。
+                  </p>
+                <% end %>
+              </div>
+              <div class = 'support_button'>
+                支援する
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   <% end %>
 </div>
+
+<div class = 'paginate_position'><%= paginate @rescuer_members %></div>

@@ -4,70 +4,142 @@ $wide: 10px;
 
 /* rescuer_memberのcard（index）*/
 
-#card {
-  position: relative;
-  margin: 18px 0 170px 0;
+.row {
+  margin: 18px 0 0 10px;
 
-  img {
-    width: 300px;
-    height: 100px;
-    border-radius: 15px 15px 0 0;
+  .card {
+    width: 350px;
+    border-radius: 30px;
+    margin-bottom: 20px;
   }
 
-  .card_content {
-    position: absolute;
-    background-color: #EBECF0;
-    width: 300px;
-    height: 160px;
-    border-radius: 0 0 15px 15px;
-    text-align: center;
+  .wrapper {
+    background: url(https://images.unsplash.com/photo-1496979551903-46e46589a88b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cda12b505afa1beb06e49d89014cbd65&auto=format&fit=crop&w=634&q=80) 20% 1% / cover no-repeat;
+    min-height: 300px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
     
-    .card_title {
-      margin: 2px 0;
-      padding: 2px 5px;
-      font-family: 'Montserrat', sans-serif;
+    &:hover {
+      .data {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .data {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transform: translateY(calc(230px + 4em));
+    transition: transform 0.3s; /* 上下のスピード調節 */
+  }
+
+  .content {
+    padding: 4em 1em 1px; /* 沈み込み調節 */
+    position: relative;
+    z-index: 1;
+    background-color: #fff;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .rescue_station_kana {
+    text-align: center;
+    font-size: 12px;
+    padding-bottom: 1px;
+  }
+
+  .rescue_station {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 50px;
+  }
+  .representative {
+    font-size: 13px;
+  }
+
+  .post_code {
+    font-size: 13px;
+    
+    .post_icon{
+      color: #00bfff;
       font-weight: bold;
-      font-size: 17px;
-      color: rgb(0, 0, 0);
-      border-bottom: solid 2px #87CEFA;
-    }
-
-    .description {
-      padding: 0 5px 5px;
-      font-family: 'Montserrat', sans-serif;
       font-size: 15px;
-      color: rgb(0, 0, 0);
+    }
+  }
+
+  .home_address {
+    font-size: 13px;
+    
+  }
+
+  .phone_number {
+    font-size: 13px;
+  }
+
+  .email {
+    font-size: 13px;
+    border-bottom: medium solid #00d9ff;
+    padding-bottom: 3px;
+  }
+
+  .comment {
+    font-size: 14px;
+    padding-top: 3px;
+    padding-bottom: 2px;
+    font-weight: bold;
+  }
+
+  .support_button {
+    text-align: center;
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+    border-radius: 320px;
+    text-shadow: 1px 1px 0 #FFF;
+    padding: $wide $wide * 2;
+    color:#61677C;
+    font-weight: bold;
+    box-shadow: -5px -5px 20px $color-white,  5px 5px 20px $color-shadow;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    font-weight: 600;
+    margin: 10px 100px 10px;
+
+    &:focus {
+      box-shadow:  inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
     }
 
-    .card_button {
-      text-align: center;
-      border: 0;
-      width: 100px;
-      outline: 0;
-      font-size: 16px;
-      border-radius: 320px;
-      text-shadow: 1px 1px 0 #FFF;
-      display: block;
-      margin:auto;
-      padding: 10px;
-      color:#61677C;
-      box-shadow: -5px -5px 20px $color-white,  5px 5px 20px $color-shadow;
-      transition: all 0.2s ease-in-out;
-      cursor: pointer;
-      font-weight: 600;
-
-      &:focus {
-        box-shadow:  inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
-      }
-
-      &:hover {
-        box-shadow: -2px -2px 5px $color-white, 2px 2px 5px $color-shadow;
-      }
-
-      &:active {
-        box-shadow: inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
-      }
+    &:hover {
+      box-shadow: -2px -2px 5px $color-white, 2px 2px 5px $color-shadow;
     }
+
+    &:active {
+       box-shadow: inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
+    }
+  }
+
+  /* Google Material Icons */
+
+  .material-icons.emoji_people {
+    color: #00bfff;
+    font-size: 16px;
+  }
+
+  .material-icons.house {
+    color: #00bfff;
+    font-size: 16px;
+  }
+
+  .phone_in_talk {
+    color: #00bfff;
+    font-size: 16px;
+  }
+
+  .mail_outline {
+    color: #00bfff;
+    font-size: 16px;
   }
 }
 
@@ -131,14 +203,18 @@ table {
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     text-align: left;
-    width: 70%;
     text-align: center;
     background-color: #EBECF0;
-    padding: 10px 0;
+    padding: 12px 15px;
   }
   
-  .comment {
+  .th_comment {
     padding: 25px 0;
+  }
+
+  .td_comment {
+    text-align: left;
+    width: 100px;
   }
 
   td[colspan = '2'].table_down {

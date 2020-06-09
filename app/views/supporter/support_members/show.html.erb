@@ -1,2 +1,18 @@
-<h1>SupportMembers#show</h1>
-<p>Find me in app/views/support_members/show.html.erb</p>
+<table>
+  <td colspan = '2' class = 'table_top'>支援者 情報</td>
+  <tr>
+    <th>支援者名</th>
+    <td><%= @support_member.name %></td>
+  </tr>
+  <tr>
+    <th>支援者名 カナ</th>
+    <td><%= @support_member.name_kana %></td>
+  </tr>
+  <tr>
+    <th>Email</th>
+    <td><%= @support_member.email %></td>
+  </tr>
+  <td colspan = '2' class = 'table_down'>
+    <%= link_to '編集', edit_supporter_support_member_path, class: 'button' %>
+  </td>
+</table>

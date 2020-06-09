@@ -7,5 +7,4 @@ class Rescuestation::Base < ApplicationController
       redirect_to root_url
     end
   end
-  
 end
