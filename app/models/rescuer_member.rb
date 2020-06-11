@@ -26,9 +26,12 @@ class RescuerMember < ApplicationRecord
 
   VALID_PHONE_REGEX = /\A\d{10}$|^\d{11}\z/
   validates :phone_number, presence: true, format: { with: VALID_PHONE_REGEX }
-
   validates :post_code, length: { is: 7 }
   validates :home_address, presence: true
-  validates :comment, length: { in: 50..70 }
+  validates :comment, length: { in: 50..70 }, allow_blank: true
+
   has_secure_password
+
+  has_many :rescuestation_items
+  has_many :items, through: :rescuestation_items
 end

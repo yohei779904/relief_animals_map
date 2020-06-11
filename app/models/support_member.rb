@@ -19,5 +19,8 @@ class SupportMember < ApplicationRecord
     format: {with: KATAKANA_REGEXP, allow_blank: true}
 
   has_secure_password
+  
 
+  has_many :supporter_items
+  has_many :rescuestation_items, through: :supporter_items
 end

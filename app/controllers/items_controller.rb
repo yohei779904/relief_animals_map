@@ -1,9 +1,10 @@
 class ItemsController < ApplicationController
 
   def new
-    # カラの配列を用意。Viewで@itemsにアクセスしたときにnilとなってエラーが発生するのを防ぐため。
+    # カラの配列を用意して初期化。Viewで@itemsにアクセスしたときにnilとなってエラーが発生するのを防ぐため。
     @items = []
 
+    # フォームから送信される検索ワードを取得
     @keyword = params[:keyword]
     if @keyword.present?
       results = RakutenWebService::Ichiba::Item.search({

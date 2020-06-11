@@ -9,7 +9,7 @@ class Supporter::SessionsController < Supporter::Base
     password = params[:session][:password]
     if login(email, password)
       flash.notice = 'ログインしました。'
-      redirect_to supporter_support_member_path(current_support_member)
+      redirect_to rescuestation_rescuer_members_path
     else
       flash.now.alert = 'メールアドレスまたはパスワードが正しくありません。'
       render 'new'

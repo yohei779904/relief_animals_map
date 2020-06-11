@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200601112726) do
+ActiveRecord::Schema.define(version: 20200610111834) do
+
+  create_table "chats", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+    t.integer "rescuer_member_id"
+    t.integer "support_member_id"
+    t.string "from"
+    t.string "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "code"
@@ -37,6 +46,15 @@ ActiveRecord::Schema.define(version: 20200601112726) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "rescuestation_items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+    t.bigint "rescuer_member_id", null: false
+    t.bigint "item_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_rescuestation_items_on_item_id"
+    t.index ["rescuer_member_id"], name: "index_rescuestation_items_on_rescuer_member_id"
+  end
+
   create_table "support_members", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "name", null: false
     t.string "name_kana", null: false
@@ -47,4 +65,6 @@ ActiveRecord::Schema.define(version: 20200601112726) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "rescuestation_items", "items"
+  add_foreign_key "rescuestation_items", "rescuer_members"
 end
