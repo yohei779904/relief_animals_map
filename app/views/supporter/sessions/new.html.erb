@@ -1,3 +1,5 @@
+<% @page_title = 'login' %>
+
 <div id = 'login-generic-form'>
   <div class = "login">
     <h1>支援者 Login</h1>
@@ -12,5 +14,6 @@
   </div>
   <div class = 'buttons'>
     <%= f.submit 'Push' %>
+    <%= link_to '戻る', root_path, class: 'form_return_button', style: 'color: #f6ad49;' %>
   </div>
 <% end %>

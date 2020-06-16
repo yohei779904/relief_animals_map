@@ -1,3 +1,5 @@
+<% @page_title = 'edit' %>
+
 <%= form_with(model: @RescuerMember, method: :patch, local: true) do |f| %></td>
   <table>
     <td colspan = '2' class = 'table_top'>救援者 情報</td>
@@ -39,6 +41,7 @@
     </tr>
     <td colspan = '2' class = 'table_down'>
       <%= f.submit '更新', class: 'button'  %>
+      <%= link_to '戻る', rescuestation_rescuer_member_path(current_rescuer_member), class: 'form_return_button', style: 'color: #f6ad49;' %>
     </td>
   </table>
 <% end %>

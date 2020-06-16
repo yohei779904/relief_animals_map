@@ -34,4 +34,22 @@ class RescuerMember < ApplicationRecord
 
   has_many :rescuestation_items
   has_many :items, through: :rescuestation_items
+  has_many :wants
+  has_many :want_items, through: :wants, source: :item
+
+  # 商品を取得
+  def want(item)
+    self.wants.find_or_create_by(item_id: item.id)
+  end
+
+  # 商品をキャンセル
+  def unwant(item)
+    want = self.wants.find_by(item_id: item.id)
+    want.destroy if want
+  end
+
+  # 商品を既に取得していないかどうか確認。
+  def want?(item)
+    self.want_items.include?(item)
+  end
 end

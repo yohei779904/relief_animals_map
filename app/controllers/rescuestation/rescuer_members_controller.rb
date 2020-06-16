@@ -2,6 +2,28 @@ class Rescuestation::RescuerMembersController < Rescuestation::Base
   before_action :authorize, except:[:new, :create, :index]
   before_action :two_permits, only:[:index]
 
+  def dashboard
+
+    if rs_logged_in?
+
+      @support_members = SupportMember.all
+      rooms = current_rescuer_member.rooms
+      #自分が入ってるroomの相手のidを格納する
+      @support_member_ids = []
+        rooms.each do |r|
+          @support_member_ids << r.support_member_id
+        end
+    elsif sp_logged_in?
+      @rescuer_members = RescuerMember.all
+      rooms = current_support_member.rooms
+      #自分が入ってるroomの相手のidを格納する
+      @rescuer_member_ids = []
+        rooms.each do |r|
+          @rescuer_member_ids << r.rescuer_member_id
+        end
+    end
+  end
+  
   def index
     @rescuer_members = RescuerMember.all.page(params[:page]).per(6)
   end

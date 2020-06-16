@@ -6,7 +6,7 @@ class CreateSupportMembers < ActiveRecord::Migration[5.1]
       t.string :email, null: false
       t.string :password_digest
       t.boolean :suspended, default: false, null: false
-
+  
       t.timestamps
     end
   end

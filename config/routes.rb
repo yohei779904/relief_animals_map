@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   end
 
   namespace :rescuestation do
+
     get 'login', to: 'sessions#new'
     post 'login', to: 'sessions#create'
     delete 'logout', to: 'sessions#destroy'
@@ -31,7 +32,12 @@ Rails.application.routes.draw do
   end
 
   resources :items, only: [:new]
-  resources :ownerships, only: [:create, :destroy]
+
+  resources :rescuestation_items, only: [:show, :create, :destroy] do
+    member do
+      get 'dashboard', to: 'rescuestation_items#dashboard'
+    end
+  end
 
 end
 

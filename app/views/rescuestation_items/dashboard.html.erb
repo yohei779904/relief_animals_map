@@ -1,0 +1,35 @@
+<% @page_title = 'dashboard' %>
+
+<div class = "row">
+  <!-- 7列を商品確認に。 -->
+  <div class = "col-md-7 ">
+    <div class = "headline">現在必要としている物資</div>
+    <div class = 'product_list'>
+      <% @rescuer_member_items.each do |rescuer_member_item| %>
+        <% if rescuer_member_item.image_url %>
+          <img src="<%= rescuer_member_item.image_url %>" alt="item.name">
+        <% else %>
+          <p>no image</p>
+        <% end %>
+      
+        <% unless @rescuer_member_item.present? %>
+          <h4>商品が登録されていません。</h4>
+        <% end %>
+      <% end %>
+    </div>
+    <div>
+      <%= link_to '救援物資検索', new_item_path, class: 'search_supplies' %>
+    </div>
+  </div>
+
+  <!-- 5列はチャットに。 -->
+  <div class = "col-md-5 col-xs-12">
+    <div class = "panel panel-info">
+      <div class = "panel-heading">
+        <div class = "panel-title">
+          チャット
+        </div>
+      </div>
+    <div class = "panel-body"></div>
+  </div>
+</div>

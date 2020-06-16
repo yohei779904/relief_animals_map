@@ -79,6 +79,13 @@ div.container {
               box-shadow: inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
             }
           }
+
+          .form_return_button {
+            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
+            padding: $wide $wide * 2;
+            font-weight: bold;
+          }
         }
       }
     }

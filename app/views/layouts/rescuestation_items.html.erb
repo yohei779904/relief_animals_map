@@ -8,6 +8,8 @@
     <title><%= page_title %></title>
     <%= csrf_meta_tags %>
 
+    <!-- Google Material Icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Bootstrap CSS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Bootstrap JS -->
@@ -20,7 +22,7 @@
 
   <body>
     <div id = 'wrapper'>
-        <%= render '/supporter/shared/header' %>
+        <%= render 'rescuestation/shared/header' %>
         <!-- toppages/index.html.erbを表示-->
         <%= yield :cover %>
 
@@ -29,7 +31,7 @@
       </div>
         <%= render 'shared/footer' %>
     </div>
-
+    <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->

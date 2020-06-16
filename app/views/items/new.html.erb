@@ -1,14 +1,31 @@
 <div class="search">
   <div class="row">
     <div class="text-center">
+      <% if @keyword.present? %>
+        <div class = 'search_results'>
+          <%= @keyword %>の検索結果
+        </div>
+      <% end %>
+      
       <%= form_with url: new_item_path, method: :get, class: 'form-inline', local: true do |f| %>
         <div class="form-group">
-          <%= f.text_field :keyword, class: 'form-control input-lg', placeholder: "キーワードを入力", size: 40 %>
+          <%= f.text_field :keyword, class: 'form-control input-md', placeholder: "キーワードを入力", size: 40 %>
         </div>
-        <%= f.submit '商品を検索', class: 'btn btn-success btn-lg' %>
+        <span class = 'item_button'>
+          <%= f.submit '商品を検索'%>
+        </span>
+        <span class = 'return_button'>
+          <%= link_to '戻る', dashboard_rescuestation_item_path(current_rescuer_member) %>
+        </span>
       <% end %>
     </div>
   </div>
 </div>
 
 <%= render 'items', items: @items %>
+
+<% if @items.present? %>
+  <div class = 'paginate_position'>
+    <%= paginate @items %>
+  </div>
+<% end %>

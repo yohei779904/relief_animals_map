@@ -10,18 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200610111834) do
+ActiveRecord::Schema.define(version: 20200610111033) do
 
-  create_table "chats", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
-    t.integer "rescuer_member_id"
-    t.integer "support_member_id"
-    t.string "from"
-    t.string "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+  create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "code"
     t.string "name"
     t.string "url"
@@ -30,7 +21,7 @@ ActiveRecord::Schema.define(version: 20200610111834) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "rescuer_members", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+  create_table "rescuer_members", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "rescue_station", null: false
     t.string "rescue_station_kana", null: false
     t.string "representative", null: false
@@ -46,7 +37,8 @@ ActiveRecord::Schema.define(version: 20200610111834) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "rescuestation_items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+  create_table "rescuestation_items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "type"
     t.bigint "rescuer_member_id", null: false
     t.bigint "item_id", null: false
     t.datetime "created_at", null: false
@@ -55,7 +47,7 @@ ActiveRecord::Schema.define(version: 20200610111834) do
     t.index ["rescuer_member_id"], name: "index_rescuestation_items_on_rescuer_member_id"
   end
 
-  create_table "support_members", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+  create_table "support_members", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", null: false
     t.string "name_kana", null: false
     t.string "email", null: false

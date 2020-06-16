@@ -1,5 +1,5 @@
 <header>
-  <%= link_to image_tag('/images/logo.png', alt: 'Logo'), root_path, class: "logo-mark" %>
+  <%= link_to image_tag('logo.png', alt: 'Logo'), root_path, class: "logo-mark" %>
   <%= content_tag(:span, flash.notice, class: 'notice') if flash.notice %>
   <%= content_tag(:span, flash.alert, class: 'alert') if flash.alert %>
 

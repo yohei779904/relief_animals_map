@@ -14,28 +14,15 @@ class ItemsController < ApplicationController
       })
 
       results.each do |result|
-        # 全ての検索結果を保存はダメなので、扱い易いようにitemとしてインスタンスを作成。（この時は、まだ保存はしない）
-        item = Item.new(read(result))
+        # 全ての検索結果を保存はダメなので、扱い易いようにitemとしてインスタンスを作成。（この時は、まだ保存はしない。）
+        item = Item.find_or_initialize_by(read(result)) # application_controllerにて定義。
         # 下記でitem を [] に追加。
         @items << item
       end
+
+      if @items.present?
+        @items = Kaminari.paginate_array(@items).page(params[:page]).per(12)
+      end
     end
-  end
-
-  private
-
-  def read(result)
-    code = result['itemCode']
-    name = result['itemName']
-    url = result['itemUrl']
-    # 画像サイズ『128x128』だと小さいので、画像URL末尾に含まれる『?_ex=128x128』を削除。
-    image_url = result['mediumImageUrls'].first['imageUrl'].gsub('?_ex=128x128', '')
-
-    {
-      code: code,
-      name: name,
-      url: url,
-      image_url: image_url,
-    }
   end
 end

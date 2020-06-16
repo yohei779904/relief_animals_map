@@ -8,7 +8,7 @@ class Rescuestation::SessionsController < Rescuestation::Base
     password = params[:session][:password]
     if login(email, password)
       flash.notice = 'ログインしました。'
-      redirect_to rescuestation_rescuer_member_path(current_rescuer_member)
+      redirect_to dashboard_rescuestation_item_path(current_rescuer_member)
     else
       flash.now.alert = 'メールアドレスまたはパスワードが正しくありません。'
       render 'new'
