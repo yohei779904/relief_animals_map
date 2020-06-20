@@ -39,6 +39,9 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :suppoter_items, only: [:show] do
+    member do
+      get 'dashboard', to: 'rescuestation_items#dashboard'
+    end
+  end
 end
-
-

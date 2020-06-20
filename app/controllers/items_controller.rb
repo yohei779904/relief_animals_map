@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
       results = RakutenWebService::Ichiba::Item.search({
         keyword: @keyword,
         imageFlag: 1, # 画像付きのみ検索。
-        hits: 20, # 20件検索。
+        hits: 30, # 30件検索。
       })
 
       results.each do |result|

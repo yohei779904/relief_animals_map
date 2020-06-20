@@ -10,11 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200610111033) do
+ActiveRecord::Schema.define(version: 20200617170857) do
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "code"
     t.string "name"
+    t.string "price"
     t.string "url"
     t.string "image_url"
     t.datetime "created_at", null: false
@@ -57,6 +58,17 @@ ActiveRecord::Schema.define(version: 20200610111033) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "supporter_items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "support_member_id", null: false
+    t.bigint "rescuestation_item_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["rescuestation_item_id"], name: "index_supporter_items_on_rescuestation_item_id"
+    t.index ["support_member_id"], name: "index_supporter_items_on_support_member_id"
+  end
+
   add_foreign_key "rescuestation_items", "items"
   add_foreign_key "rescuestation_items", "rescuer_members"
+  add_foreign_key "supporter_items", "rescuestation_items"
+  add_foreign_key "supporter_items", "support_members"
 end

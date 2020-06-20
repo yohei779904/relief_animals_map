@@ -1,3 +1,5 @@
+<% @page_title = 'item_search' %>
+
 <div class="search">
   <div class="row">
     <div class="text-center">
@@ -6,18 +8,19 @@
           <%= @keyword %>の検索結果
         </div>
       <% end %>
-      
-      <%= form_with url: new_item_path, method: :get, class: 'form-inline', local: true do |f| %>
-        <div class="form-group">
-          <%= f.text_field :keyword, class: 'form-control input-md', placeholder: "キーワードを入力", size: 40 %>
-        </div>
-        <span class = 'item_button'>
-          <%= f.submit '商品を検索'%>
-        </span>
-        <span class = 'return_button'>
-          <%= link_to '戻る', dashboard_rescuestation_item_path(current_rescuer_member) %>
-        </span>
-      <% end %>
+      <div class = 'form'>
+        <%= form_with url: new_item_path, method: :get, class: 'form-inline', local: true do |f| %>
+          <div class="form-group">
+            <%= f.text_field :keyword, class: 'form-control input-md', placeholder: "キーワードを入力", size: 40 %>
+          </div>
+          <span class = 'item_button'>
+            <%= f.submit '商品を検索'%>
+          </span>
+          <span class = 'return_button'>
+            <%= link_to '戻る','javascript:history.back()' %>
+          </span>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
