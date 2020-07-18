@@ -4,12 +4,14 @@ $color-shadow: #BABECC;
 $color-white: #FFF;
 $wide: 10px;
 
-div.container {
+.row {
+
   div#signup-generic-form {
+    width: 100%;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: -0.5px;
     font-size: $ruler;
-    width: 480px;
+    max-width: 480px;
     margin: $wide *5 auto;
     padding: $wide auto;
     border-radius: $wide;

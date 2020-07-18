@@ -5,7 +5,8 @@ class RescuestationItemsController < ApplicationController
   end
 
   def create
-    # 「Item.find_by」 して見つかればテーブルに保存されていたインスタンスを返し、
+    
+    # 「Item.find_by」して見つかればテーブルに保存されていたインスタンスを返し、
     # 見つからなければ 「Item.new」 して新規作成する。
     @item = Item.find_or_initialize_by(code: params[:item_code])
 

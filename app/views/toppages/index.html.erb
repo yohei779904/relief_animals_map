@@ -1,12 +1,22 @@
 <!--下記で「/application.html.erb」の<%= yield :cover %>に埋め込まれる-->
 <% content_for :cover do %>
-  <div class="cover">
-    <div class="cover-inner">
-      <div class="cover-contents">
-        <%= image_tag 'cover_main.png', alt: "Background_Photo", class: "background_photo" %>
-
+  <div class="text-center">
+    <div class="cover">
+      <div class="row">
+        <div class="pc"><!-- レスポンシブ設定 -->
+          <%= image_tag 'background_img.png', alt: "Background_Photo", class: "background_photo" %>
+        </div>
+        <div class="sp"><!-- レスポンシブ設定 -->
+          <%= image_tag 'phone_background_img.png', alt: "Background_Photo", class: "background_photo" %>
+        </div>
+        <div class="pc"><!-- レスポンシブ設定 -->
           <%= link_to '支援者 新規登録', supporter_signup_path, class: 'btn_supporter btn-default' %>
           <%= link_to '救援者 新規登録', rescuestation_signup_path, class: 'btn_rescuer btn-default' %>
+        </div>
+        <div class="sp"><!-- レスポンシブ設定 -->
+          <%= link_to '支援者 新規登録', supporter_signup_path, class: 'sp_btn_supporter btn-default' %>
+          <%= link_to '救援者 新規登録', rescuestation_signup_path, class: 'sp_btn_rescuer btn-default' %>
+        </div>
       </div>
     </div>
   </div>

@@ -4,14 +4,16 @@ $color-shadow: #BABECC;
 $color-white: #FFF;
 $wide: 10px;
 
-div.container {
+.row {
+  padding: 10px;
+
   div#login-generic-form {
+    width: 100%;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: -0.5px;
     font-size: $ruler;
-    width: 480px;
+    max-width: 480px;
     margin: $wide *5 auto;
-    padding: $wide auto;
     border-radius: $wide;
     border: solid 4px $color-white;
     background-color: $color-bg;
@@ -35,7 +37,6 @@ div.container {
       width: 100%;
       margin-right: $ruler/2;
       box-shadow:  inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $color-white;
-      width: 100%;
       box-sizing: border-box;
       transition: all 0.2s ease-in-out;
       appearance: none;

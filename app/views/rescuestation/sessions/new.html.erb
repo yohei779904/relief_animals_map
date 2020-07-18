@@ -1,19 +1,24 @@
 <% @page_title = 'login' %>
 
-<div id = 'login-generic-form'>
-  <div class = "login">
-    <h1>救援者 Login</h1>
-  </div>
+<div class="text-center">
+  <div class="row">
+    <div id = 'login-generic-form'>
+      <div class = "login">
+        <h1>救援者 Login</h1>
+      </div>
  
-<%= form_with(scope: :session, url: rescuestation_login_path, local: true) do |f| %>
-  <div>
-    <%= f.email_field :email, :placeholder => 'Email', class: 'required', size: 32, required: true %>
+      <%= form_with(scope: :session, url: rescuestation_login_path, local: true) do |f| %>
+        <div>
+          <%= f.email_field :email, :placeholder => 'Email', class: 'required', size: 32, required: true %>
+        </div>
+        <div>
+          <%= f.password_field :password, :placeholder => 'Password', class: 'required', required: true %>
+        </div>
+        <div class = 'buttons'>
+          <%= f.submit 'Push' %>
+          <%= link_to '戻る', 'javascript:history.back()', class: 'form_return_button', style: 'color: #f6ad49;' %>
+        </div>
+      <% end %>
+    </div>
   </div>
-  <div>
-    <%= f.password_field :password, :placeholder => 'Password', class: 'required', required: true %>
-  </div>
-  <div class = 'buttons'>
-    <%= f.submit 'Push' %>
-    <%= link_to '戻る', 'javascript:history.back()', class: 'form_return_button', style: 'color: #f6ad49;' %>
-  </div>
-<% end %>
+</div>

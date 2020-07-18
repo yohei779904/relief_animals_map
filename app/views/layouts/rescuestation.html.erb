@@ -22,15 +22,16 @@
 
   <body>
     <div id = 'wrapper'>
-        <%= render 'rescuestation/shared/header' %>
-        <!-- toppages/index.html.erbを表示-->
-        <%= yield :cover %>
+      <%= render 'shared/navi' %>
+      <!-- toppages/index.html.erbを表示-->
+      <%= yield :cover %>
 
       <div class="container">
         <%= yield %>
       </div>
         <%= render 'shared/footer' %>
     </div>
+    
     <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>

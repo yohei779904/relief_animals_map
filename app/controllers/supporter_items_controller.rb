@@ -1,6 +1,6 @@
 class SupporterItemsController < ApplicationController
   def dashboard
-    @supporter_item = RescuestationItem.find(params[:id])
-    @supporter_items = @supporter_items.type.all
+    @supporter_item = RescuerMember.find(params[:id])
+    @supporter_items = @supporter_item.items.all
   end
 end

@@ -4,19 +4,19 @@
   <!-- 7列を商品確認に。 -->
   <div class = "col-md-7 ">
     <div class = "headline">現在必要としている物資</div>
-    <div class = 'product_list'>
-      <% @rescuer_member_items.each do |rescuer_member_item| %>
-        <% if rescuer_member_item.image_url %>
-          <img src="<%= rescuer_member_item.image_url %>" alt="item.name">
-        <% else %>
-          <p>no image</p>
-        <% end %>
+      <div class = 'product_list'>
+        <% @rescuer_member_items.each do |rescuer_member_item| %>
+          <% if rescuer_member_item.image_url.present? %>
+            <img src="<%= rescuer_member_item.image_url %>" alt="item.name">
+          <% else %>
+            <p>no image</p>
+          <% end %>
       
-        <% unless @rescuer_member_item.present? %>
-          <h4>商品が登録されていません。</h4>
+          <% unless @rescuer_member_item.present? %>
+            <h4>商品が登録されていません。</h4>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
+      </div>
     <div>
       <%= link_to '救援物資検索', new_item_path, class: 'search_supplies' %>
     </div>

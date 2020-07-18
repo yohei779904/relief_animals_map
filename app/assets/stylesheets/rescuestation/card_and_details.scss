@@ -4,9 +4,10 @@ $wide: 10px;
 
 /* rescuer_memberのcard（index）*/
 
-.row {
+.card-row {
   margin: 18px 0 0 10px;
   z-index: 1;
+  
   .card {
     width: 350px;
     border-radius: 30px;
